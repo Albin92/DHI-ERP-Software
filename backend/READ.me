@@ -1,0 +1,44 @@
+DHI/ERP Web Portal - API Documentation
+This backend is built to handle Admin, Faculty, and Student roles with an integrated "Gatekeeper" approval system.
+
+1. Authentication & Security
+Register User: POST /api/auth/register
+
+Body: { "name", "email", "password", "role", "usn", "semester" }
+
+Login: POST /api/auth/login
+
+Body: { "identifier", "password" } (Identifier can be Email or USN)
+
+Note: Students are blocked until an Admin approves them.
+
+2. Bulletin & Notifications
+Get All Alerts: GET /api/bulletin/alerts
+
+Feature: Returns a showBadge: true flag if the notice is less than 24 hours old.
+
+Post Notice: POST /api/notices (Admin/Faculty only).
+
+3. Notes Manager
+Upload Note: POST /api/notes/upload
+
+Body: { "title", "subject", "semester", "format", "fileUrl" }
+
+Fetch by Semester: GET /api/notes/:sem (e.g., /api/notes/4).
+
+4. Attendance & Leave
+Check Attendance: GET /api/attendance/status/:usn
+
+Response: Returns percentage and shortage: true if below 75%.
+
+Apply for Leave: POST /api/attendance/leave/apply.
+
+5. Admin Database & Gatekeeper
+View Pending Students: GET /api/admin/students.
+
+Approve User: PATCH /api/admin/approve/:usn.
+
+🕹️ Final Tip for the Home Stretch:
+Make sure your teammate knows that all these requests require a JSON body. Since we are in Mock Mode, the server will stay alive even without a database, so they can test their frontend forms right now!
+
+Is there any specific page from the PDF you want me to double-check before you hand this over to the frontend team? I can help you add the "Calendar with important dates" or the "Previous Year Question Banks" if they are ready for those.
