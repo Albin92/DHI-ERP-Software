@@ -1,6 +1,6 @@
 import express from "express";
-import { getAllStudents, approveUser, getFacultyDB } from "../controllers/adminController.js";
-import { protect, restrictTo } from "../middleware/authMiddleware.js";
+import { getAllStudents, approveUser, getFacultyDB } from "../controllers/admin.controller.js";
+import { protect, restrictTo } from "../middleware/auth.middleware.js";
 
 const router = express.Router();
 

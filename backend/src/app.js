@@ -2,12 +2,12 @@ import express from "express";
 import cors from "cors";
 
 // Importing all Roadmap Modules 
-import authRoutes from "./routes/authRoutes.js";
+import authRoutes from "./routes/auth.routes.js";
 import noticeRoutes from "./routes/noticeRoutes.js";
 import noteRoutes from "./routes/noteRoutes.js";
-import attendanceRoutes from "./routes/attendanceRoutes.js";
+import attendanceRoutes from "./routes/attendance.routes.js";
 import bulletinRoutes from "./routes/bulletinRoutes.js";
-import adminRoutes from "./routes/adminRoutes.js"; // The Management Module [cite: 8]
+import adminRoutes from "./routes/admin.routes.js"; // The Management Module [cite: 8]
 
 const app = express();
 

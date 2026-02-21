@@ -1,6 +1,6 @@
 import express from "express";
-import { calculateAttendance, applyLeave, manageLeave } from "../controllers/attendanceController.js";
-import { protect, restrictTo } from "../middleware/authMiddleware.js";
+import { calculateAttendance, applyLeave, manageLeave } from "../controllers/attendance.controller.js";
+import { protect, restrictTo } from "../middleware/auth.middleware.js";
 
 const router = express.Router();
 
